@@ -1,0 +1,57 @@
+{
+  "name": "xiaohongshu-publisher",
+  "version": "1.0.0",
+  "description": "小红书自动发布 - 自动发布笔记到小红书平台",
+  "author": "User",
+  "triggers": [
+    "发布小红书",
+    "发笔记",
+    "小红书发布",
+    "xhs publish",
+    "post to xiaohongshu"
+  ],
+  "capabilities": [
+    "xiaohongshu",
+    "publish",
+    "browser-automation"
+  ],
+  "command": {
+    "type": "shell",
+    "command": "python",
+    "args": [
+      "E:\\project\\xhs_publish.py",
+      "{title}",
+      "{content}",
+      "{tags}",
+      "{image}"
+    ]
+  },
+  "parameters": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "笔记标题，不超过20字"
+    },
+    "content": {
+      "type": "string", 
+      "required": true,
+      "description": "笔记正文内容"
+    },
+    "tags": {
+      "type": "string",
+      "required": false,
+      "description": "话题标签，如 #AI#测试"
+    },
+    "image": {
+      "type": "string",
+      "required": true,
+      "description": "图片路径"
+    }
+  },
+  "config": {
+    "default_image": "C:\\Users\\Administrator\\Pictures\\212721871.png"
+  },
+  "requires": {
+    "cookies": "agents/mofa/cookies/xiaohongshu.json"
+  }
+}

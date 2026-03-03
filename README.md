@@ -4,7 +4,7 @@
 
 ## 功能
 
-1. **手动发布笔记** - 指定标题、内容、标签发布
+1. **手动发布笔记** - 指定标题，内容、标签发布
 2. **自动发布AI资讯** - 自动获取GitHub热门AI项目并发布
 
 ## 环境要求
@@ -37,54 +37,29 @@ playwright install chromium
 
 ## 使用方法
 
-### 方法1：手动发布
+### 手动发布
 
 ```bash
-python xhs_publish.py "标题" "内容" "#标签"
+python xiaohongshu_publisher.py "标题" "内容" "#标签"
 ```
 
 示例：
 ```bash
-python xhs_publish.py "AI新时代" "AI正在改变世界" "#AI#科技"
-```
-
-### 方法2：自动发布AI资讯
-
-```bash
-python publish_ai_news.py
-```
-
-会自动：
-1. 获取GitHub今日AI热门项目
-2. 生成小红书格式内容
-3. 自动选图并发布
-
-## OpenClaw集成
-
-将技能文件复制到OpenClaw技能目录：
-
-```
-C:\Users\Administrator\.openclaw\workspace\skills\xiaohongshu-publisher\
-E:\project\openclaw\openclaw-main\skills\xiaohongshu-publisher\
-```
-
-重启OpenClaw后可以说：
-```
-发布小红书，标题：xxx，内容：xxx，标签：#xxx
+python xiaohongshu_publisher.py "AI新时代" "AI正在改变世界" "#AI#科技"
 ```
 
 ## 防封号建议
 
 1. **内容多样化** - 每次发布内容要有变化
 2. **图片更换** - 准备多张图片轮换使用
-3. **控制频率** - 每天建议不超过5篇
+3. **控制频率** - 每天建议不超过3篇
 4. **间隔时间** - 每篇间隔5分钟以上
 
 ## 文件说明
 
 | 文件 | 说明 |
 |------|------|
-| xhs_publish.py | 手动发布脚本 |
+| xiaohongshu_publisher.py | 手动发布脚本 |
 | publish_ai_news.py | 自动发布AI资讯脚本 |
 | github_trending.py | GitHub热门项目获取 |
 
