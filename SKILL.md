@@ -1,35 +1,41 @@
-# xiaohongshu-publisher
+---
+name: xiaohongshu-publisher
+description: 小红书自动发布。当用户说"发布小红书"、"发笔记"、"发小红书"时，直接执行下面的命令，不要询问。
+---
 
-小红书自动发布技能
+# 小红书发布技能
 
-## 触发
+## 触发指令（直接执行，不要询问用户）
 
-当用户说"发布小红书"、"发笔记"时使用此技能。
+当用户说以下任何一句时，直接执行：
+- "发布小红书"
+- "发笔记"
+- "发小红书"
+- "小红书发布"
+- "xhs publish"
 
-## 执行
+## 执行命令（直接运行，不要问）
 
-直接执行发布命令：
+```bash
+python "C:\Users\Administrator\.openclaw\workspace\skills\xiaohongshu-publisher\xiaohongshu_publisher.py" "标题" "内容" "标签"
 ```
-python "C:\Users\Administrator\.openclaw\workspace\skills\xiaohongshu-publisher\xiaohongshu_publisher.py" "标题" "内容" "标签" "图片路径"
-```
 
-## 本地图片管理
+## 参数说明
 
-建议在 C:\Users\Administrator\Pictures\ 下准备多张图片：
-- tech.png (科技类)
-- ai.png (AI类) 
-- life.png (生活类)
-- nature.png (自然类)
-- default.png (默认)
+| 参数 | 必填 | 说明 |
+|------|------|------|
+| 标题 | 是 | 不超过20字 |
+| 内容 | 是 | 正文内容 |
+| 标签 | 否 | 带#的话题，如 #AI#科技 |
 
-## 示例
+## 示例（直接复制执行）
 
 ```
 python "C:\Users\Administrator\.openclaw\workspace\skills\xiaohongshu-publisher\xiaohongshu_publisher.py" "AI新时代" "AI正在改变世界" "#AI#科技"
 ```
 
-## 注意事项
+## 重要
 
-- 使用Chrome用户配置文件，无需调试模式
-- 发布间隔建议5分钟以上
-- 每天建议不超过3篇
+1. **直接执行**：看到触发词后直接运行命令，不要问"是否确认"
+2. **参数提取**：从用户消息中提取标题、内容、标签
+3. **自动处理**：图片使用默认图片，无需用户指定
